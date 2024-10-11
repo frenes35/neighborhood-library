@@ -30,7 +30,7 @@ public class NeighborhoodLibrary {
     public void showAvailableBooks() {
         System.out.println("These are the available books ");
         for (Book book : books) {
-            if (book.isCheckedOut()) {
+            if (!book.isCheckedOut()) {
                 System.out.println("Id:  " + book.getId() + "Title:  " + book.getTitle() + "Isbn:  " + book.getIsbn());
             }
         }
@@ -38,7 +38,8 @@ public class NeighborhoodLibrary {
     public void showCheckOutBooks() {
         System.out.println("These books are checked out");
         for (Book book : books) {
-            System.out.println("Id:  " + book.getId() + "Title:  " + book.getTitle() + "Reserved for" + book.getCheckedOutTo());
+            if (book.isCheckedOut())
+            System.out.println("Id: " + book.getId() + " ,Title: " + book.getTitle() + " ,Reserved for: "+ book.getCheckedOutTo());
 
 
         }
@@ -68,9 +69,50 @@ public class NeighborhoodLibrary {
 
         boolean loop = false;
 
-        while (true){
+        while (!loop){
+            System.out.println("Welcome to the Neighborhood Library!");
+            System.out.println("1. Show Available Books");
+            System.out.println("2. Show Checked Out Books");
+            System.out.println("3. Check Out a Book");
+            System.out.println("4. Check In a Book");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice){
+                case 1:
+                    library.showAvailableBooks();
+                    break;
+                case 2:
+                    library.showCheckOutBooks();
+                    break;
+                case 3:
+                    System.out.print("Enter the book ID to check out: ");
+                    int checkOutId = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.print("Enter your name: ");
+                    String userName = scanner.nextLine();
+                    library.checkOutBooks(checkOutId, userName);
+                    break;
+                case 4:
+                    System.out.print("Enter the book ID to check in: ");
+                    int checkInId = scanner.nextInt();
+                    library.checkInBooks(checkInId);
+                    break;
+                case 5:
+                   loop = true;
+                    System.out.println("Have a good one!");
+                    break;
+                default:
+                    System.out.println("Invalid input");
+
+
+            }
 
         }
+        scanner.close();
 
     }
 }
