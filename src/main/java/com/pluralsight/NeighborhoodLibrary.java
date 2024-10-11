@@ -13,7 +13,7 @@ public class NeighborhoodLibrary {
         books[5] = new Book(6, "370-15463", "How to Win Friends and Influence People");
         books[6] = new Book(7, "370-15464", "Atomic Habits - Workbook");
         books[7] = new Book(8, "370-15465", "Thinking, Fast and Slow");
-        books[8] = new Book(9, "370-15466", "The Subtle Art of Not Giving a F*ck");
+        books[8] = new Book(9, "370-15466", "The Subtle Art of Not Giving");
         books[9] = new Book(10, "370-15467", "Drive: The Surprising Truth About What Motivates Us");
         books[10] = new Book(11, "370-15468", "Grit: The Power of Passion and Perseverance");
         books[11] = new Book(12, "370-15469", "Essentialism: The Disciplined Pursuit of Less");

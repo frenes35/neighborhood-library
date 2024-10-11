@@ -68,10 +68,10 @@ public class Book {
         if (isCheckedOut){
             this.isCheckedOut = false;
             this.checkedOutTo = "";
-            System.out.println(title + "has been checked in");
+            System.out.println(title + "has been checked in.");
 
         }else {
-            System.out.println(title + "is not check out");
+            System.out.println(title + "is not check out.");
         }
     }
 
